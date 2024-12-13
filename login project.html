@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color:black;
+            color: white;
+            padding: 20px;
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            width: 200px;
+        }
+        button {
+            background:red;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+        #emailInputDiv {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>PROJECT LOGIN</h1>
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="message"></p>
+    <p><a href="#" onclick="showEmailInput()">Forgot Password?</a></p>
+    <div id="emailInputDiv">
+        <input placeholder="Email">
+        <button onclick="resetPassword()">Submit</button>
+    </div>
+    <script>
+        function login() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            document.getElementById('message').textContent = 
+                (user === "admin" && pass === "1234") ? "Welcome!" : "Invalid Login";
+        }
+        function showEmailInput() {
+            document.getElementById('emailInputDiv').style.display = 'block';
+        }
+        function resetPassword() {
+            alert("Password reset link sent.");
+        }
+    </script>
+</body>
+</html>
